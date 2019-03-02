@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
 
 const users = require('./routes/api/users'); 
 const profile = require('./routes/api/profile');
@@ -7,6 +8,7 @@ const posts = require('./routes/api/users');
 
 const app = express(); 
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // DB Config
@@ -18,7 +20,11 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-app.get('/', (req, res) => res.send('Hello from server!'));
+  //passport middleware
+app.use(passport.initialize());
+
+//passport config
+require('./config/passport')(passport); 
 
 // Use Routes
 app.use('/api/users', users); 
