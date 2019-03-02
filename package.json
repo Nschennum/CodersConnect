@@ -4,7 +4,7 @@
   "description": "Social Network",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js", 
+    "start": "node server.js",
     "server": "nodemon server.js"
   },
   "author": "Natalie Schennum",
@@ -12,6 +12,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
+    "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.16",
     "passport": "^0.4.0",
