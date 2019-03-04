@@ -22,11 +22,11 @@ router.get(
   (req, res) => {
     const errors = {};
 
-    Profile.populate("user", ["name", "avatar"])
-      .findOne({ user: req.user.id })
+    Profile.findOne({ user: req.user.id })
+    .populate('user', ['name', 'avatar'])
       .then(profile => {
         if (!profile) {
-          errors.noprofile = "No Profile found for user";
+          errors.noprofile = "No profile found for user";
           return res.status(404).json(errors);
         }
         res.json(profile);
