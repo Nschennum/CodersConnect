@@ -5,7 +5,7 @@ const passport = require("passport");
 
 const validatePostInput = require("../../validation/post");
 
-const Post = require("../../models/post");
+const Post = require("../../models/Post");
 const Profile = require("../../models/profile");
 
 router.get("/test", (req, res) => res.json({ msg: "Posts works!" }));

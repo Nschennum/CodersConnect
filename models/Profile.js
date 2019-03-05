@@ -112,4 +112,5 @@ const ProfileSchema = new Schema({
   }
 });
 
-module.exports = Profile = mongoose.model("profile", ProfileSchema);
+mongoose.models = {} //this line allows for a db reset due to ERR: Cannot overwrite model once compiled Mongoose
+module.exports = Profile = mongoose.model('profile', ProfileSchema);
