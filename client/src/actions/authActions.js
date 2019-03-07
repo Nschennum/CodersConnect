@@ -50,7 +50,7 @@ export const setCurrentUser = (decoded) => {
   }
 };
 
-//logout User out
+// logout User out
 export const logoutUser = () => dispatch => {
   //Remove token from loca storage
   localStorage.removeItem('jwtToken'); 
