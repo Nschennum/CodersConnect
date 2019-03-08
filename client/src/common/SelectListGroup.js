@@ -17,7 +17,7 @@ const SelectListGroup = ({
     </option>
   ))
   return (
-    <div class="form-group">
+    <div className="form-group">
       <select
         className={classnames("form-control form-control-lg", {
           "is-invalid": error

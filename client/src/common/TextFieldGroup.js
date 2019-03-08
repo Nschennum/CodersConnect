@@ -14,7 +14,7 @@ const TextFieldGroup = ({
   disabled
 }) => {
   return (
-    <div class="form-group">
+    <div className="form-group">
       <input
         type={type}
         className={classnames("form-control form-control-lg", {
