@@ -23,7 +23,7 @@ import "./App.css";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
 import "./App.css";
-import Profiles from "./profiles/Profiles";
+import Profiles from "./components/profiles/Profiles";
 import "./App.css";
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
