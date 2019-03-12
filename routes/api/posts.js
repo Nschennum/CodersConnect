@@ -6,17 +6,16 @@ const passport = require("passport");
 const validatePostInput = require("../../validation/post");
 
 const Post = require("../../models/Post");
-const Profile = require("../../models/profile");
+const Profile = require("../../models/Profile");
 
 router.get("/test", (req, res) => res.json({ msg: "Posts works!" }));
 
 // GET all posts
 router.get("/", (req, res) => {
   Post.find()
-    .sort({ data: -1 })
+    .sort({ date: -1 })
     .then(posts => res.json(posts))
-    .catch(err => res.status(404))
-    .json({ nopostsfound: "Posts not found" });
+    .catch(err => res.status(404).json({ nopostsfound: "Posts not found" }));
 });
 // GET a post via ID
 router.get("/:id", (req, res) => {
@@ -28,7 +27,8 @@ router.get("/:id", (req, res) => {
 // POST to Create Post api/posts -Private
 router.post(
   "/",
-  passport.authenticate("jwt", { session: false }, (req, res) => {
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
     const { errors, isValid } = validatePostInput(req.body);
 
     //Check validation
@@ -45,7 +45,7 @@ router.post(
     });
 
     newPost.save().then(post => res.json(post));
-  })
+  }
 );
 
 // DELETE /api/post/:id -private
@@ -147,7 +147,7 @@ router.post(
         };
 
         //Add to comments array
-        post.comment.unshift(newComment);
+        post.comments.unshift(newComment);
         //save
         post.save().then(post => res.json(post));
       })
@@ -162,32 +162,30 @@ router.delete(
   "/comment/:id/:comment_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { errors, isValid } = validatePostInput(req.body);
 
-    //Check validation
-    if (!isValid) {
-      // If any errors, send 400
-      return res.status(400).json(errors);
-    }
     Post.findById(req.params.id)
       .then(post => {
-       //check if post exisits
-       if(post.comment.filter(comment => comment._id.toString() === req.params.comment_id).length === 0 ){
-         return res.status(404).json({ commentdoesntexist: 'Comment doesn;t exisit.'})
-       }
-       //GET remove index
-       const removeIndex = post.comments 
-       .map(item => item._id.toString())
-       .index(req.params.comment_id);
+        //check if post exisits
+        if (
+          post.comments.filter(
+            comment => comment._id.toString() === req.params.comment_id
+          ).length === 0
+        ) {
+          return res
+            .status(404)
+            .json({ commentdoesntexist: "Comment doesn't exisit." });
+        }
+        //GET remove index
+        const removeIndex = post.comments
+          .map(item => item._id.toString())
+          .indexOf(req.params.comment_id);
 
-       //Splice out
-       post.comments.splice(removeIndex, 1);
-       //save
-       post.save().then(post => releaseEvents.json(post));
+        //Splice out
+        post.comments.splice(removeIndex, 1);
+        //save
+        post.save().then(post => res.json(post));
       })
-      .catch(err =>
-        releaseEvents.status(404).json({ postnotfound: "No post found" })
-      );
+      .catch(err => res.status(404).json({ postnotfound: 'No post found' }));
   }
 );
 
