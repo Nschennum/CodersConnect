@@ -48,12 +48,12 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div class="login">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 m-auto">
-              <h1 class="display-4 text-center">Log In</h1>
-              <p class="lead text-center">
+      <div className="login">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 m-auto">
+              <h1 className="display-4 text-center">Log In</h1>
+              <p className="lead text-center">
                 Sign in to your DevConnector account
               </p>
               <form onSubmit={this.onSubmit}>
@@ -73,7 +73,7 @@ class Login extends Component {
               onChange={this.onChange}
               error={errors.password}
               />
-                <input type="submit" class="btn btn-info btn-block mt-4" />
+                <input type="submit" className="btn btn-info btn-block mt-4" />
               </form>
             </div>
           </div>
