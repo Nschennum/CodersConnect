@@ -8,6 +8,7 @@ const validateProfileInput = require("../../validation/profile");
 const validateExperienceInput = require("../../validation/experience");
 const validateEducationInput = require("../../validation/education");
 
+
 //Load Profile mOdel
 const Profile = require("../../models/Profile");
 
@@ -54,7 +55,7 @@ router.get("/all", (req, res) => {
 router.get("/handle/:handle", (req, res) => {
   Profile.findOne({ handle: req.params.handle })
     .populate("user", ["name", "avatar"])
-    .then(rpofile => {
+    .then(profile => {
       if (!profile) {
         errors.noprofile = "There is no profile for this user";
         res.status(404).json(errors);
@@ -246,3 +247,4 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 });
 
 module.exports = router;
+
