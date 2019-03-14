@@ -14,10 +14,10 @@ img {
   background: url('./img/fist-bump.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  height: 84.3vh;
+  height: 81.5vh;
   margin-top: -24px;
-  margin-bottom: -50px;
-  padding-bottom: 1rem; 
+  margin-bottom: -30px;
+  /* padding-bottom: 1rem;  */
 }
 
 .landing-inner {
