@@ -198,7 +198,7 @@ router.post('/education', passport.authenticate('jwt', {session: false}), (req, 
 });
 
 // DELETE api/profile/experience/:exp_id
-router.post('/experience/:exp_id', passport.authenticate('jwt', {session: false}), (req, res) => {
+router.delete('/experience/:exp_id', passport.authenticate('jwt', {session: false}), (req, res) => {
 
   Profile.findOne({ user: req.user.id })
   .then(profile => {
@@ -217,7 +217,7 @@ router.post('/experience/:exp_id', passport.authenticate('jwt', {session: false}
 });
 
 // DELETE api/profile/education/:edu_id
-router.post('/education/:edu_id', passport.authenticate('jwt', {session: false}), (req, res) => {
+router.delete('/education/:edu_id', passport.authenticate('jwt', {session: false}), (req, res) => {
 
   Profile.findOne({ user: req.user.id })
   .then(profile => {
@@ -236,7 +236,7 @@ router.post('/education/:edu_id', passport.authenticate('jwt', {session: false})
 });
 
 // DELETE User and Profile api/profile
-router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+router.delete('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 
   Profile.findOneAndRemove({ user: req.user.id })
   .then(() => {
