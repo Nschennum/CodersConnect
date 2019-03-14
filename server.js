@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const path = require("path");
-const favicon = require("serve-favicon")
+// const favicon = require("serve-favicon")
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
@@ -27,7 +27,7 @@ mongoose
 //passport middleware
 app.use(passport.initialize());
 
-app.use(favicon(path.join(__dirname, "client", "public", "favicon.ico")));
+// app.use(favicon(path.join(__dirname, "client", "public", "favicon.ico")));
 
 //passport config
 require("./config/passport")(passport);
