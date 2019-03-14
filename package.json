@@ -1,5 +1,5 @@
 {
-  "name": "dev_connecter",
+  "name": "coders_connect",
   "version": "1.0.0",
   "description": "Social Network",
   "main": "server.js",
@@ -8,7 +8,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heruku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix && npm run build"
   },
   "author": "Natalie Schennum",
   "license": "MIT",
