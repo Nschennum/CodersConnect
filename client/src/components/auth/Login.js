@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import TextFieldGroup from "../../common/TextFieldGroup";
+import { Button } from 'reactstrap';
 
 class Login extends Component {
   constructor() {
@@ -54,7 +55,7 @@ class Login extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Log In</h1>
               <p className="lead text-center">
-                Sign in to your DevConnector account
+                Sign in to your CodersConnect account:
               </p>
               <form onSubmit={this.onSubmit}>
               <TextFieldGroup
@@ -73,7 +74,7 @@ class Login extends Component {
               onChange={this.onChange}
               error={errors.password}
               />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
+                <Button type="submit"  className="btn-block mt-4 mb-4" color="secondary">Submit</Button>
               </form>
             </div>
           </div>
