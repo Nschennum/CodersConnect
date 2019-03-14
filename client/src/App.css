@@ -2,14 +2,22 @@ img {
   width: 100%;
 }
 
-.landing {
-  position: relative;
-  background: url('./img/showcase.jpg') no-repeat;
+.App {
+  background: url('./img/bg.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100%;
+}
+
+.landing {
+  position: relative;
+  background: url('./img/fist-bump.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 84.3vh;
   margin-top: -24px;
   margin-bottom: -50px;
+  padding-bottom: 1rem; 
 }
 
 .landing-inner {
@@ -37,3 +45,35 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+.header {
+  position: relative;
+  background: url('./img/header.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.register {
+  position: relative;
+  background: url('./img/sign-up.jpg'), no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 74vh; 
+  border-radius: 25px;
+}
+
+.login {
+  position: relative;
+  background: url('./img/login.jpeg'), no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  height: 74vh; 
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.dash-add {
+  height: 45.6vh;
+}
+

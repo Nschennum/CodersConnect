@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'; 
 import { registerUser } from '../../actions/authActions';
 import TextFieldGroup from "../../common/TextFieldGroup";
+import { Button } from 'reactstrap';
 
 class Register extends Component {
   constructor() {
@@ -61,9 +62,9 @@ onSubmit = (e) => {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign Up</h1>
               <p className="lead text-center">
-                Create your DevConnector account
+                Create your CodersConnect account
               </p>
-              <form onSubmit={this.onSubmit}>
+              <form onSubmit={this.onSubmit} className="mb-4">
               <TextFieldGroup
                   placeholder="Name"
                   name="name"
@@ -96,7 +97,7 @@ onSubmit = (e) => {
                   onChange={this.onChange}
                   error={errors.password2}
                 />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
+                <Button type="submit" className="btn-block mt-4" color="secondary">Submit</Button> 
               </form>
             </div>
           </div>

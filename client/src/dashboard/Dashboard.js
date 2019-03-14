@@ -7,6 +7,7 @@ import Spinner from '../common/Spinner';
 import ProfileActions from './ProfileActions';
 import Experience from './Experience';
 import Education from './Education';
+import '../App.css'
 
 class Dashboard extends Component {
   componentDidMount(){
@@ -30,7 +31,7 @@ onDeleteClick(e) {
       if(Object.keys(profile).length > 0 ) {
 dashboardContent= (
 <div>
-<p className="lead text-muted">Welcone <Link to={`/profile/${profile.handle}`}></Link>{ user.name }!</p>
+<p className="lead dashboard text-black">Welcone <Link to={`/profile/${profile.handle}`}></Link>{ user.name }!</p>
 <ProfileActions/>
 <Experience  experience={profile.experience}/>
 <Education education={profile.education} />
@@ -41,7 +42,7 @@ dashboardContent= (
       } else {
 //user is logged in w no profile
 dashboardContent = (
-  <div><p className="lead text-muted">Welcone { user.name }!</p>
+  <div><p className="lead dash-add text-black">Welcone { user.name }!</p>
   <p>You have not yet setup a profile, please add your info...</p>
   <Link  to="/create-profile" className="btn btn-lg btn-info"> Create Profile</Link></div>
 )
@@ -49,7 +50,7 @@ dashboardContent = (
      }
     return (
       <div className="dashbaord">
-        <div className="row"><div className="col-md-12">
+        <div className="row"><div className="dashboard-stuff col-md-12">
         <h1 className="display-4">Dashboard</h1>
         {dashboardContent}
         </div></div>
