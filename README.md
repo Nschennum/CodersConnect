@@ -2,12 +2,12 @@
 A place for developers to create a portfolio and connect with others. 
 
 ## Features
-This app uses a MERN Stack(MongoDB, ExpresJS, NodeJS, and React); 
+This app uses a MERN Stack(MongoDB, ExpressJS, NodeJS, and React); 
 It incorporates Redux functionality for future scalability potential; 
 Gravatars will automatically be pulled in from email addresses with associated pictures; 
 The GitHub API was employed for populating Repositories within Portfolios that add their GitHub Username; 
-Moment was utilized for date feilds within forms;
-Boostrap and reactstrap were used for styling; 
+Moment was utilized for date fields within forms;
+Bootstrap and reactstrap were used for styling; 
 FA icons; 
 Images are from pexels.com; 
 
