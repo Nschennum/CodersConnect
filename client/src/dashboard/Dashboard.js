@@ -31,7 +31,7 @@ onDeleteClick(e) {
       if(Object.keys(profile).length > 0 ) {
 dashboardContent= (
 <div>
-<p className="lead dashboard text-black">Welcone <Link to={`/profile/${profile.handle}`}></Link>{ user.name }!</p>
+<p className="lead dashboard text-black">Welcome <Link to={`/profile/${profile.handle}`}></Link>{ user.name }!</p>
 <ProfileActions/>
 <Experience  experience={profile.experience}/>
 <Education education={profile.education} />
