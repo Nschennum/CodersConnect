@@ -55,7 +55,6 @@ img {
 
 .register {
   position: relative;
-  background: url('./img/sign-up.jpg'), no-repeat;
   background-size: cover;
   background-position: center;
   height: 74vh; 
@@ -64,12 +63,10 @@ img {
 
 .login {
   position: relative;
-  background: url('./img/login.jpeg'), no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 25px;
   height: 74vh; 
-  color: white;
   margin-bottom: 1rem;
 }
 
